@@ -2,16 +2,7 @@
   List of Employees
 </h3>
 
-<div *ngFor="let emp of employees">
-  Id: {{ emp.id }} <br>
-  Emp No: {{ emp.empNo }} <br>
-  First Name: {{ emp.firstName }} <br>
-  Last Name: {{ emp.lastName }} <br>
-  City: {{ emp.city }} <br>
-  <hr />
-</div>
-
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -19,15 +10,50 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>City</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <th>
-      <tr>{{ emp.id }} </tr>
-      <tr>{{ emp.empNo }} </tr>
-      <tr>{{ emp.firstName }} </tr>
-      <tr>{{ emp.lastName }} </tr>
-      <tr>{{ emp.city }} </tr>
-    </th>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.id }} </td>
+      <td>{{ emp.empNo }} </td>
+      <td>{{ emp.firstName }} </td>
+      <td>{{ emp.lastName }} </td>
+      <td>{{ emp.city }} </td>
+      <td>
+        <input type="submit" value="Show Details" 
+          class="btn btn-info" (click)="showEmpDetails($event, emp)" />
+      </td>
+    </tr>
   </tbody>
 </table>
+
+<!-- <p>Enter city</p>
+<input type="text" [(ngModel)]="cityName" />
+
+<input type="text" [value]="cityName" />
+
+<input type="text" [value]="cityName" />
+
+<input type="submit" value="Change City" 
+        (click)="changeCity($event)" />
+
+        {{ cityName }}
+        {{ cityName }}
+        {{ cityName }} -->
+
+<div class="row">
+  <div class="col-md-6">
+    <app-emp-create (empCreated)="onEmployeeCreated($event)">
+      
+    </app-emp-create>
+  </div>
+
+  <div class="col-md-6">
+    <app-emp-details [employee]="selectedEmployee" >
+
+    </app-emp-details>
+  </div>
+ 
+
+</div>

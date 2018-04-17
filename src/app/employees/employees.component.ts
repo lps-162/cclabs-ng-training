@@ -9,6 +9,7 @@ import { mockEmployees } from '../shared/mock-data/mock-employees';
 })
 export class EmployeesComponent implements OnInit {
   employees: Employee[];
+  selectedEmployee: Employee;
 
   constructor() { }
 
@@ -16,5 +17,24 @@ export class EmployeesComponent implements OnInit {
     this.employees = mockEmployees;
   }
 
+  cityName: string = 'Bangalore';
+
+  changeCity(eventInfo) {
+    console.log('Change City Function', eventInfo);
+    this.cityName = 'Trivandrum';
+  }
+
+  showEmpDetails(eventInfo, empData: Employee) {
+    console.log('Parent : ', empData);
+
+    this.selectedEmployee = empData;
+  }
+
+  onEmployeeCreated(empData: Employee) {
+    console.log('IN PARENT: ', empData);
+    let length = this.employees.length;
+    empData.id = length + 1;
+    this.employees.push(empData);
+  }
 
 }

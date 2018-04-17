@@ -1,0 +1,15 @@
+<div *ngIf="employee">
+  <h3>
+    Employee Details
+  </h3>
+  
+  Id: {{ employee.id }} <br>
+  Emp No: {{ employee.empNo }} <br>
+  First Name : {{ employee.firstName }} <br>
+  Last Name: {{ employee.lastName }} <br>
+  city: {{ employee.city }} <br>
+  
+  {{ employee | json }}
+
+</div>
+
