@@ -1,0 +1,33 @@
+<h3>
+  List of Employees - 222
+</h3>
+
+<div *ngFor="let emp of employees">
+  Id: {{ emp.id }} <br>
+  Emp No: {{ emp.empNo }} <br>
+  First Name: {{ emp.firstName }} <br>
+  Last Name: {{ emp.lastName }} <br>
+  City: {{ emp.city }} <br>
+  <hr />
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Emp No</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <th>
+      <tr>{{ emp.id }} </tr>
+      <tr>{{ emp.empNo }} </tr>
+      <tr>{{ emp.firstName }} </tr>
+      <tr>{{ emp.lastName }} </tr>
+      <tr>{{ emp.city }} </tr>
+    </th>
+  </tbody>
+</table>
