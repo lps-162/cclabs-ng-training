@@ -19,6 +19,9 @@ import { MatButtonModule,
       } from '@angular/material';
 
 import { TableModule } from 'primeng/table';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { appRouting } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,17 @@ import { TableModule } from 'primeng/table';
     AppComponent,
     EmployeesComponent,
     EmpDetailsComponent,
-    EmpCreateComponent
+    EmpCreateComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    appRouting,
+
     BrowserAnimationsModule,
+    
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
