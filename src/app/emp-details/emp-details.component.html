@@ -1,15 +1,15 @@
-<div *ngIf="employee">
-  <h3>
+<mat-card *ngIf="employee">
+  <mat-card-title>
     Employee Details
-  </h3>
+  </mat-card-title>
   
-  Id: {{ employee.id }} <br>
-  Emp No: {{ employee.empNo }} <br>
-  First Name : {{ employee.firstName }} <br>
-  Last Name: {{ employee.lastName }} <br>
-  city: {{ employee.city }} <br>
-  
-  {{ employee | json }}
+  <mat-card-content>
+      Id: {{ employee.id }} <br>
+      Emp No: {{ employee.empNo }} <br>
+      First Name : {{ employee.firstName }} <br>
+      Last Name: {{ employee.lastName }} <br>
+      city: {{ employee.city }} <br>    
+  </mat-card-content>
 
-</div>
+</mat-card>
 

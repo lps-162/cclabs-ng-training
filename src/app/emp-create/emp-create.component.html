@@ -1,4 +1,4 @@
-
+<!-- 
   <h3>
       Create New Employee
     </h3>
@@ -35,4 +35,51 @@
       </div>
     
       <input type="submit" class="btn btn-primary" />
-    </form>
+    </form> -->
+
+    <mat-card>
+      <form (ngSubmit)="createEmployee()">
+        <mat-card-title>
+          Create a new Employee
+        </mat-card-title>
+
+        <mat-card-content>
+          <mat-form-field>
+              <input matInput [(ngModel)]="employee.empNo"
+                type="text" name="empNo" 
+                placeholder="Enter Emp No">
+          </mat-form-field>
+          <br />
+
+          <mat-form-field>
+              <input matInput [(ngModel)]="employee.firstName"
+                type="text" name="firstName" 
+                placeholder="Enter First Name">
+          </mat-form-field>
+          <br />
+
+          <mat-form-field>
+              <input matInput [(ngModel)]="employee.lastName"
+                type="text" name="lastName" 
+                placeholder="Enter Last Name">
+          </mat-form-field>
+          <br />
+
+          <mat-form-field>
+              <input matInput [(ngModel)]="employee.city"
+                type="text" name="city" 
+                placeholder="Enter City">
+          </mat-form-field>
+
+          <br/>
+
+          <mat-card-actions>
+            <button mat-raised-button color="accent">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          </mat-card-actions>
+
+        </mat-card-content>
+      </form>
+    </mat-card>

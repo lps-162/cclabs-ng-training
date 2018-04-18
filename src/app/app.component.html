@@ -1,1 +1,21 @@
-<app-employees></app-employees>
+<mat-toolbar color="primary">
+    <button mat-fab color="primary" (click)="sn.toggle()">
+        <mat-icon>
+            list
+        </mat-icon>
+    </button>
+    <span>Limetools</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened="true" #sn>
+        <mat-nav-list>
+            <a mat-list-item> Employees </a>
+            <a mat-list-item> About </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <app-employees></app-employees>
+    </mat-sidenav-content>
+</mat-sidenav-container>

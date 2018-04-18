@@ -10,11 +10,20 @@ import { mockEmployees } from '../shared/mock-data/mock-employees';
 export class EmployeesComponent implements OnInit {
   employees: Employee[];
   selectedEmployee: Employee;
+  cols: any[];
 
   constructor() { }
 
   ngOnInit() {
     this.employees = mockEmployees;
+
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'empNo', header: 'Emp No' },
+      { field: 'firstName', header: 'First Name' },
+      { field: 'lastName', header: 'Last Name' },
+      { field: 'city', header: 'City' }
+    ];
   }
 
   cityName: string = 'Bangalore';
@@ -34,7 +43,6 @@ export class EmployeesComponent implements OnInit {
     console.log('IN PARENT: ', empData);
     let length = this.employees.length;
     empData.id = length + 1;
-    this.employees.push(empData);
+    this.employees = this.employees.concat(empData);
   }
-
 }

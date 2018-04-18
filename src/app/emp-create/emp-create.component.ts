@@ -9,7 +9,7 @@ import { Employee } from '../shared/models/employee';
 export class EmpCreateComponent implements OnInit {
   employee: Employee = new Employee('', '', '', '');
   @Output() empCreated = new EventEmitter<Employee>();
-
+ 
   constructor() { }
 
   ngOnInit() {
