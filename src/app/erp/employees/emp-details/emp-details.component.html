@@ -1,0 +1,39 @@
+<button mat-raised-button color="accent" 
+    (click)="goBack()">
+    Go Back
+</button>
+
+<div fxLayout="row">
+
+  <mat-card *ngIf="employee" fxFlex="50">
+    <mat-card-title>
+      Employee Details
+    </mat-card-title>
+    
+    <mat-card-content>
+        Id: {{ employee.id }} <br>
+        Emp No: {{ employee.empNo }} <br>
+        First Name : {{ employee.firstName }} <br>
+        Last Name: {{ employee.lastName }} <br>
+        city: {{ employee.city }} <br>    
+    </mat-card-content>
+  
+  </mat-card>
+
+  <mat-card *ngIf="employee" fxFlex="50">
+    <mat-card-title>
+      Employee Details
+    </mat-card-title>
+    
+    <mat-card-content>
+        Id: {{ employee.id }} <br>
+        Emp No: {{ employee.empNo }} <br>
+        First Name : {{ employee.firstName }} <br>
+        Last Name: {{ employee.lastName }} <br>
+        city: {{ employee.city }} <br>    
+    </mat-card-content>
+  
+  </mat-card>
+</div>
+
+

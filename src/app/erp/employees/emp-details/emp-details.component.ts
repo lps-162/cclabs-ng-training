@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from '../shared/models/employee';
+import { Employee } from '../../../shared/models/employee';
 import { ActivatedRouteSnapshot, ActivatedRoute, Router } from '@angular/router';
-import { mockEmployees } from '../shared/mock-data/mock-employees';
+import { mockEmployees } from '../../../shared/mock-data/mock-employees';
 
 @Component({
   selector: 'app-emp-details',

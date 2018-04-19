@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../shared/models/employee';
-import { mockEmployees } from '../shared/mock-data/mock-employees';
+import { Employee } from '../../../shared/models/employee';
+import { mockEmployees } from '../../../shared/mock-data/mock-employees';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-employees',
-  templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  selector: 'app-emp-list',
+  templateUrl: './emp-list.component.html',
+  styleUrls: ['./emp-list.component.css']
 })
-export class EmployeesComponent implements OnInit {
+export class EmpListComponent implements OnInit {
 
   employees: Employee[];
   selectedEmployee: Employee;

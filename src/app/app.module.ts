@@ -5,9 +5,6 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { EmployeesComponent } from './employees/employees.component';
-import { EmpDetailsComponent } from './emp-details/emp-details.component';
-import { EmpCreateComponent } from './emp-create/emp-create.component';
 
 import { MatButtonModule, 
          MatIconModule,
@@ -25,14 +22,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { appRouting } from './app.routing';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { EmployeesModule } from './erp/employees/employees.module';
 
 @NgModule({
   declarations: [
     // components, directives and pipes
     AppComponent,
-    EmployeesComponent,
-    EmpDetailsComponent,
-    EmpCreateComponent,
     HomeComponent,
     AboutComponent,
     NotFoundComponent
@@ -55,7 +50,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     // primeng related modules
     TableModule,
 
-    FlexLayoutModule
+    FlexLayoutModule,
+    
+    EmployeesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

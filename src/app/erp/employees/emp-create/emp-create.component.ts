@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Employee } from '../shared/models/employee';
+import { Employee } from '../../../shared/models/employee';
 
 @Component({
   selector: 'app-emp-create',
