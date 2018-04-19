@@ -13,35 +13,9 @@ const appRoutes: Route[] = [
         path: '',
         component: HomeComponent
     },
-    // {
-    //     path: 'employees',
-    //     component: EmployeesComponent
-    // },
-    // {
-    //     path: 'employees/create',
-    //     component: EmpCreateComponent
-    // },
-    // {
-    //     path: 'employees/:id',
-    //     component: EmpDetailsComponent
-    // },
     {
         path: 'employees',
-        component: EmpSectionComponent,
-        children: [
-            {
-                path: '',
-                component: EmpListComponent
-            },
-            {
-                path: 'create',
-                component: EmpCreateComponent
-            },
-            {
-                path: ':id',
-                component: EmpDetailsComponent
-            }
-        ]
+        loadChildren: 'app/erp/employees/employees.module#EmployeesModule'
     },
     {
         path: 'about',
