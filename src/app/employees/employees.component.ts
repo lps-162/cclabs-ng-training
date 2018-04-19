@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../shared/models/employee';
 import { mockEmployees } from '../shared/mock-data/mock-employees';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees',
@@ -8,11 +9,12 @@ import { mockEmployees } from '../shared/mock-data/mock-employees';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
+
   employees: Employee[];
   selectedEmployee: Employee;
   cols: any[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.employees = mockEmployees;
@@ -44,5 +46,13 @@ export class EmployeesComponent implements OnInit {
     let length = this.employees.length;
     empData.id = length + 1;
     this.employees = this.employees.concat(empData);
+  }
+
+  onSelection(eventInfo) {
+    console.log(eventInfo);
+    const employee = eventInfo.data;
+
+    const link = ['/employees', employee.id];
+    this.router.navigate(link);
   }
 }

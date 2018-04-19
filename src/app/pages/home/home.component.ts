@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  employee = {
+    id: 123
+  };
+
 }

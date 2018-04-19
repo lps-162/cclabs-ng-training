@@ -1,10 +1,11 @@
 <h3>
-  List of Employees
+    List of Employees
 </h3>
 
 <p-table [columns]="cols" [value]="employees" 
-      selectionMode="single" [(selection)]="selectedEmployee" 
-      [paginator]="true" [rows]="5">
+      selectionMode="single" 
+      [paginator]="true" [rows]="5" 
+      [responsive]="true" (onRowSelect)="onSelection($event)">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">
@@ -20,9 +21,18 @@
         </tr>
     </ng-template>
     
+    <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+            <button mat-raised-button color="accent" 
+                routerLink="/employees/create">
+                <mat-icon>create</mat-icon>
+                Create
+            </button>
+        </div>
+    </ng-template>
+
 </p-table>
-
-
+<!-- 
 <div>
   <div>
     <app-emp-create (empCreated)="onEmployeeCreated($event)">
@@ -36,4 +46,4 @@
     </app-emp-details>
   </div>
  
-</div>
+</div> -->

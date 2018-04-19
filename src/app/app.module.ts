@@ -18,10 +18,13 @@ import { MatButtonModule,
         MatInputModule
       } from '@angular/material';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { TableModule } from 'primeng/table';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { appRouting } from './app.routing';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { appRouting } from './app.routing';
     EmpDetailsComponent,
     EmpCreateComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { appRouting } from './app.routing';
     MatInputModule,
 
     // primeng related modules
-    TableModule
+    TableModule,
+
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
