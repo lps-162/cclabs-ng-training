@@ -3,6 +3,10 @@
     Go Back
 </button>
 
+<div *ngIf="errMessage">
+  {{ errMessage }}
+</div>
+
 <div fxLayout="row">
 
   <mat-card *ngIf="employee" fxFlex="50">
@@ -15,6 +19,7 @@
         Emp No: {{ employee.empNo }} <br>
         First Name : {{ employee.firstName }} <br>
         Last Name: {{ employee.lastName }} <br>
+        Full Name: {{ employee.fullName }} <br>
         city: {{ employee.city }} <br>    
     </mat-card-content>
   
@@ -30,10 +35,9 @@
         Emp No: {{ employee.empNo }} <br>
         First Name : {{ employee.firstName }} <br>
         Last Name: {{ employee.lastName }} <br>
-        city: {{ employee.city }} <br>    
+        Full Name: {{ employee.fullName }} <br>    
+        city: {{ employee.city }} <br>
     </mat-card-content>
   
   </mat-card>
 </div>
-
-

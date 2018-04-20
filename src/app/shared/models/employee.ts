@@ -4,6 +4,7 @@ export class Employee {
     firstName: string;
     lastName: string;
     city: string;
+    fullName?: string;
 
     constructor(empNo: string, 
                 firstName: string, lastName: string,

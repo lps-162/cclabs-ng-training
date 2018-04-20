@@ -25,8 +25,9 @@ export class EmpListComponent implements OnInit {
     this.cols = [
       { field: 'id', header: 'Id' },
       { field: 'empNo', header: 'Emp No' },
-      { field: 'firstName', header: 'First Name' },
-      { field: 'lastName', header: 'Last Name' },
+      // { field: 'firstName', header: 'First Name' },
+      // { field: 'lastName', header: 'Last Name' },
+      { field: 'fullName', header: 'Full Name'},
       { field: 'city', header: 'City' }
     ];
   }

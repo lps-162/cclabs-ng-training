@@ -38,43 +38,57 @@
     </form> -->
 
     <mat-card>
-      <form (ngSubmit)="createEmployee()">
+      <form (ngSubmit)="createEmployee()" [formGroup]="createForm">
         <mat-card-title>
           Create a new Employee
         </mat-card-title>
 
         <mat-card-content>
           <mat-form-field>
-              <input matInput [(ngModel)]="employee.empNo"
+              <input matInput
                 type="text" name="empNo" 
-                placeholder="Enter Emp No">
+                placeholder="Enter Emp No" 
+                formControlName="empNo">
           </mat-form-field>
           <br />
 
           <mat-form-field>
-              <input matInput [(ngModel)]="employee.firstName"
+              <input matInput
                 type="text" name="firstName" 
-                placeholder="Enter First Name">
+                placeholder="Enter First Name"
+                formControlName="firstName">
           </mat-form-field>
+          <br>
+          <span *ngIf="formErrors.firstName" >
+              {{ formErrors.firstName }}
+            </span>
           <br />
 
           <mat-form-field>
-              <input matInput [(ngModel)]="employee.lastName"
+              <input matInput
                 type="text" name="lastName" 
-                placeholder="Enter Last Name">
+                placeholder="Enter Last Name"
+                formControlName="lastName">
           </mat-form-field>
+          <br>
+          <span *ngIf="formErrors.lastName" >
+              {{ formErrors.lastName }}
+            </span>
           <br />
 
           <mat-form-field>
-              <input matInput [(ngModel)]="employee.city"
+              <input matInput
                 type="text" name="city" 
-                placeholder="Enter City">
+                placeholder="Enter City"
+                formControlName="city">
           </mat-form-field>
-
           <br/>
+          <span *ngIf="formErrors.city" >
+              {{ formErrors.city }}
+            </span>
 
           <mat-card-actions>
-            <button mat-raised-button color="accent">
+            <button mat-raised-button color="accent" [disabled]="!isFormValid">
               <mat-icon>save</mat-icon>
               Save
             </button>
