@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Employee } from '../../../shared/models/employee';
 import { ActivatedRouteSnapshot, ActivatedRoute, Router } from '@angular/router';
 import { mockEmployees } from '../../../shared/mock-data/mock-employees';
+import { EmployeesService } from '../../../shared/services/employees.service';
 
 @Component({
   selector: 'app-emp-details',
@@ -12,16 +13,19 @@ export class EmpDetailsComponent implements OnInit {
   @Input() employee: Employee;
 
   constructor(private routeInfo: ActivatedRoute,
-              private router: Router) { 
+              private router: Router,
+              private empService: EmployeesService) { 
   }
 
   ngOnInit() {
     const empId = +this.routeInfo.snapshot.params['id'];
 
-    console.log(empId);
+    //console.log(empId);
 
-    this.employee = mockEmployees.find(e => e.id === empId);
-    console.log(this.employee);
+    this.empService.getEmployeeById(empId)
+                  .subscribe(e => this.employee = e);
+                  
+    //console.log(this.employee);
   }
 
   goBack() {

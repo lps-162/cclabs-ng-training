@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { MatButtonModule, 
   MatIconModule,
- MatToolbarModule,
- MatSidenavModule,
- MatListModule,
- MatCardModule,
- MatInputModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule,
+  MatCardModule,
+  MatInputModule
 } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';

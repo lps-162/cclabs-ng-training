@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -11,6 +12,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { EmployeesModule } from './erp/employees/employees.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmployeesService } from './shared/services/employees.service';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+
+    HttpClientModule,
     appRouting,
- 
+    
     SharedModule
   ],
-  providers: [],
+  providers: [EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

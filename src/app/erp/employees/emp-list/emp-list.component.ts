@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../../shared/models/employee';
-import { mockEmployees } from '../../../shared/mock-data/mock-employees';
 import { Router } from '@angular/router';
+import { EmployeesService } from '../../../shared/services/employees.service';
 
 @Component({
   selector: 'app-emp-list',
@@ -14,10 +14,13 @@ export class EmpListComponent implements OnInit {
   selectedEmployee: Employee;
   cols: any[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private empService: EmployeesService) { }
 
   ngOnInit() {
-    this.employees = mockEmployees;
+    this.empService.getEmployees().subscribe(listOfEmp => {
+      this.employees = listOfEmp;
+    });
 
     this.cols = [
       { field: 'id', header: 'Id' },
